@@ -1,0 +1,21 @@
+<launch>
+  <!-- <arg name="name" value="bigbot"/> -->
+  <arg name="x" default="0" />
+  <arg name="y" default="0" />
+  <arg name="z" default="0" />
+  <arg name="yaw" default="0" />
+
+  <!-- Configuration of Jackal which you would like to simulate.
+  See jackal_description for details. 'base' or 'front_laser' -->
+  <arg name="config" default="front_laser" />
+
+  <!-- Load Jackal's description, controllers, and teleop nodes. -->
+  <include file="$(find bigbot_tutorial)/launch/description.launch">
+    <arg name="config" value="$(arg config)" />
+  </include>
+  
+  <!-- Spawn Jackal -->
+  <node name="spawner_model" pkg="gazebo_ros" type="spawn_model"
+  args="-urdf -model rbt -param robot_description -x $(arg x) -y $(arg y) -z $(arg z) -R 0 -P 0 -Y $(arg yaw)" />
+
+</launch>
