@@ -1,7 +1,7 @@
 <launch>
   <!-- Open gazebo world -->
+  <!-- <arg name="world_name" value="$(find jackal_gazebo)/worlds/jackal_race.world" /> -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <!-- <arg name="world_name" value="$(find jackal_gazebo)/worlds/jackal_race.world" /> -->
     <arg name="world_name" value="$(find turtlebot3_gazebo)/worlds/turtlebot3_empty.world" />
     <arg name="paused" value="false"/>
     <arg name="use_sim_time" value="true"/>
@@ -10,17 +10,37 @@
     <arg name="debug" value="0"/>
   </include>
 
-  <!-- Spawn rbt1 -->
-  <group ns="rbt1">
-    <param  name="tf_prefix" value="rbt1" />
-    <include file="$(find bigbot_tutorial)/launch/robot.launch" >
-      <!-- <arg name="name" value="rbt1"/> -->
-      <arg name="x" default="1" />
-      <arg name="y" default="0" />
-      <arg name="z" default="0" />
-      <arg name="yaw" default="0" />
-    </include>
-  </group>
+  <arg name="ns1" default="rbt1"/>
+  <arg name="ns2" default="rbt2"/>
+  <arg name="ns3" default="rbt3"/>
 
+  <!-- Spawn rbt1 -->
+  <include file="$(find bigbot_tutorial)/launch/robot.launch" >
+    <arg name="ns" default="$(arg ns1)"/>
+    <arg name="x" default="1" />
+    <arg name="y" default="0" />
+    <arg name="z" default="0" />
+    <arg name="roll" default="0" />
+    <arg name="pitch" default="0" />
+    <arg name="yaw" default="0" />
+  </include>
+
+  <!-- Spawn rbt2 -->
+  <include file="$(find bigbot_tutorial)/launch/robot.launch" >
+    <arg name="ns" default="$(arg ns2)"/>
+    <arg name="x" default="-1" />
+    <arg name="y" default="0" />
+    <arg name="z" default="0" />
+    <arg name="roll" default="0" />
+    <arg name="pitch" default="0" />
+    <arg name="yaw" default="0" />
+  </include>
+
+  <!-- View in RVIZ. -->
+  <!-- <group if="$(arg rviz)">
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find bigbot_tutorial)/rviz/multi_jackal.rviz" >
+      <remap from="/move_base_simple/goal" to="/$(arg ns1)/move_base_simple/goal"/>
+    </node>
+  </group> -->
 
 </launch>
