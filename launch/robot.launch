@@ -1,6 +1,7 @@
 <launch>
   <arg name="ns" default="bigbot"/>
   <arg name="config" default="front_laser" />
+  <arg name="config_id" default="0"/>
 
   <arg name="x" default="0" />
   <arg name="y" default="0" />
@@ -13,6 +14,7 @@
   <include file="$(find bigbot_tutorial)/launch/description.launch">
     <arg name="ns" value="$(arg ns)"/>
     <arg name="config" value="$(arg config)" />
+    <arg name="config_id" default="$(arg config_id)"/>
   </include>
 
   <!-- Load Jackal's controllers and  teleop nodes. -->

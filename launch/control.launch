@@ -10,9 +10,9 @@
         args="jackal_joint_publisher jackal_velocity_controller" ns="$(arg ns)" />
 
   <!-- Create a control marker for manual control using RVIZ. -->
-  <!-- <node pkg="interactive_marker_twist_server" type="marker_server" name="twist_marker_server" ns="$(arg ns)">
+  <node pkg="interactive_marker_twist_server" type="marker_server" name="twist_marker_server" ns="$(arg ns)">
     <remap from="twist_marker_server/cmd_vel" to="jackal_velocity_controller/cmd_vel" />
     <param name="link_name" value="$(arg ns)/base_link"/>
-  </node>  -->
+  </node> 
 
 </launch>

@@ -1,16 +1,13 @@
 <launch>
   <arg name="ns" default="bigbot" />
   <arg name="config" default="base" />
-  <!-- fix for oneweek project -->
-  <arg name="env_runner" value="$(eval 'env_run' if not optenv('OS', 'unknown').lower().startswith('windows') else 'env_run.bat')" />
-  <!-- the following seems to work too when in devel space, but not in install_isolated -->
-  <!-- <arg name="env_runner" value="env_run" /> -->
+  <arg name="config_id" default="0"/>
 
   <param name="/$(arg ns)/robot_description"
-         command="$(find jackal_description)/scripts/$(arg env_runner)
+         command="$(find jackal_description)/scripts/env_run
                     $(find bigbot_tutorial)/urdf/configs/$(arg config)
                     $(find xacro)/xacro '$(find bigbot_tutorial)/urdf/jackal.urdf.xacro'
-                    'namespace:=$(arg ns)'"/>
+                    'namespace:=$(arg ns)' 'config_id:=$(arg config_id)'"/>
 
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" ns="$(arg ns)" >
     <param name="tf_prefix"         value="$(arg ns)"/>

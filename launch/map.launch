@@ -14,9 +14,14 @@
   <arg name="ns2" default="rbt2"/>
   <arg name="ns3" default="rbt3"/>
 
+  <arg name="config1_id" default="0" />
+  <arg name="config2_id" default="1" />
+  <arg name="config3_id" default="2" />
+
   <!-- Spawn rbt1 -->
   <include file="$(find bigbot_tutorial)/launch/robot.launch" >
     <arg name="ns" default="$(arg ns1)"/>
+    <arg name="config_id" default="$(arg config1_id)"/>
     <arg name="x" default="1" />
     <arg name="y" default="0" />
     <arg name="z" default="0" />
@@ -26,21 +31,22 @@
   </include>
 
   <!-- Spawn rbt2 -->
-  <include file="$(find bigbot_tutorial)/launch/robot.launch" >
+  <!-- <include file="$(find bigbot_tutorial)/launch/robot.launch" >
     <arg name="ns" default="$(arg ns2)"/>
+    <arg name="config_id" default="$(arg config2_id)"/>
     <arg name="x" default="-1" />
     <arg name="y" default="0" />
     <arg name="z" default="0" />
     <arg name="roll" default="0" />
     <arg name="pitch" default="0" />
     <arg name="yaw" default="0" />
-  </include>
+  </include> -->
 
   <!-- View in RVIZ. -->
-  <!-- <group if="$(arg rviz)">
+  <group if="$(arg rviz)">
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(find bigbot_tutorial)/rviz/multi_jackal.rviz" >
       <remap from="/move_base_simple/goal" to="/$(arg ns1)/move_base_simple/goal"/>
     </node>
-  </group> -->
+  </group>
 
 </launch>
