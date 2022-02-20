@@ -2,7 +2,8 @@
   <arg name="ns" default="bigbot"/>
   <rosparam command="load" file="$(find bigbot_tutorial)/config/control.yaml" ns="$(arg ns)"/>
 
-  <param name="$(arg ns)/jackal_velocity_controller/odom_frame_id" value="$(arg ns)/odom"/>
+  <!-- <param name="$(arg ns)/jackal_velocity_controller/odom_frame_id" value="$(arg ns)/odom"/> -->
+  <param name="$(arg ns)/jackal_velocity_controller/odom_frame_id" value="$(arg ns)/base_link"/>
   <param name="$(arg ns)/jackal_velocity_controller/base_frame_id" value="$(arg ns)/base_link"/>
   
   <!-- Spawn the jackal controls. -->

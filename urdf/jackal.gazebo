@@ -1,6 +1,30 @@
 <?xml version="1.0"?>
 <robot>
   <gazebo>
+    <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
+      <robotNamespace>/$(arg namespace)</robotNamespace>
+      <leftFrontJoint>front_left_wheel_link</leftFrontJoint>
+      <rightFrontJoint>front_right_wheel_link</rightFrontJoint>
+      <leftRearJoint>rear_left_wheel_link</leftRearJoint>
+      <rightRearJoint>rear_right_wheel_link</rightRearJoint>
+
+      <wheelSeparation>0.1</wheelSeparation>
+      <wheelDiameter>0.08</wheelDiameter>
+      <torque>0.5</torque>
+
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>base_link</odometryFrame>
+      <robotBaseFrame>base_link</robotBaseFrame>
+
+      <updateRate>10.0</updateRate>
+      <covariance_x>0.000100</covariance_x>
+      <covariance_y>0.000100</covariance_y>
+      <covariance_yaw>0.010000</covariance_yaw>
+    </plugin>
+  </gazebo>
+
+  <gazebo>
     <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
       <robotNamespace>/$(arg namespace)</robotNamespace>
     </plugin>
@@ -34,11 +58,20 @@
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
 
-  <gazebo reference="navsat_link">
+  <!-- <gazebo reference="navsat_link">
     <material>Gazebo/DarkGrey</material>
     <turnGravityOff>false</turnGravityOff>
+  </gazebo> -->
+  <!-- <gazebo reference="fenders_link">
+    <material>Gazebo/Yellow</material>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo> -->
+
+  <gazebo reference="front_fender_link">
+    <material>Gazebo/Yellow</material>
+    <turnGravityOff>false</turnGravityOff>
   </gazebo>
-  <gazebo reference="fenders_link">
+  <gazebo reference="rear_fender_link">
     <material>Gazebo/Yellow</material>
     <turnGravityOff>false</turnGravityOff>
   </gazebo>
