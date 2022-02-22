@@ -4,7 +4,7 @@ This is my personal tutorial but any question is welcoming :)
 
 I'll use **one** and **multiple** robots for my project
 
-I used rosbot 2.0 !
+I used rosbot 2.0
 
 <br/>
 
