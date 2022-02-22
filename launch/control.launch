@@ -1,19 +1,22 @@
 <launch>
   <arg name="ns" default="bigbot"/>
+  <arg name="use_global_tf" value="false"/>
+
   <rosparam command="load" file="$(find bigbot_tutorial)/config/control.yaml" ns="$(arg ns)"/>
 
   <!-- <param name="$(arg ns)/jackal_velocity_controller/odom_frame_id" value="$(arg ns)/odom"/> -->
-  <param name="$(arg ns)/jackal_velocity_controller/odom_frame_id" value="$(arg ns)/base_link"/>
+  <param name="$(arg ns)/jackal_velocity_controller/odom_frame_id" value="$(arg ns)/odom"/>
   <param name="$(arg ns)/jackal_velocity_controller/base_frame_id" value="$(arg ns)/base_link"/>
   
   <!-- Spawn the jackal controls. -->
   <node name="controller_spawner" pkg="controller_manager" type="spawner"
         args="jackal_joint_publisher jackal_velocity_controller" ns="$(arg ns)" />
 
+
   <!-- Create a control marker for manual control using RVIZ. -->
-  <node pkg="interactive_marker_twist_server" type="marker_server" name="twist_marker_server" ns="$(arg ns)">
+  <!-- <node pkg="interactive_marker_twist_server" type="marker_server" name="twist_marker_server" ns="$(arg ns)">
     <remap from="twist_marker_server/cmd_vel" to="jackal_velocity_controller/cmd_vel" />
     <param name="link_name" value="$(arg ns)/base_link"/>
-  </node> 
+  </node>  -->
 
 </launch>

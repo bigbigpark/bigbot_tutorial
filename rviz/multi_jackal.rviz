@@ -4,10 +4,12 @@ Panels:
     Name: Displays
     Property Tree Widget:
       Expanded:
-        - /Axes1
+        - /Global Options1
+        - /Status1
         - /Odometry1/Shape1
-        - /Odometry2
-        - /TF1
+        - /Odometry2/Shape1
+        - /RobotModel1
+        - /RobotModel2
       Splitter Ratio: 0.417604923248291
     Tree Height: 806
   - Class: rviz/Selection
@@ -56,7 +58,7 @@ Visualization Manager:
       Value: true
     - Class: rviz/Axes
       Enabled: true
-      Length: 0.5600000023841858
+      Length: 0.30000001192092896
       Name: Axes
       Radius: 0.10000000149011612
       Reference Frame: <Fixed Frame>
@@ -120,9 +122,9 @@ Visualization Manager:
         Alpha: 1
         Axes Length: 1
         Axes Radius: 0.10000000149011612
-        Color: 255; 25; 0
+        Color: 114; 159; 207
         Head Length: 0.30000001192092896
-        Head Radius: 0.10000000149011612
+        Head Radius: 0.20000000298023224
         Shaft Length: 1
         Shaft Radius: 0.05000000074505806
         Value: Arrow
@@ -130,123 +132,116 @@ Visualization Manager:
       Unreliable: false
       Value: true
     - Class: rviz/TF
-      Enabled: true
+      Enabled: false
       Frame Timeout: 15
       Frames:
         All Enabled: true
-        map:
-          Value: true
-        rbt1/base_link:
-          Value: true
-        rbt1/chassis_link:
-          Value: true
-        rbt1/fenders_link:
-          Value: true
-        rbt1/front_laser:
-          Value: true
-        rbt1/front_laser_mount:
-          Value: true
-        rbt1/front_left_wheel_link:
-          Value: true
-        rbt1/front_mount:
-          Value: true
-        rbt1/front_right_wheel_link:
-          Value: true
-        rbt1/imu_link:
-          Value: true
-        rbt1/mid_mount:
-          Value: true
-        rbt1/navsat_link:
-          Value: true
-        rbt1/rear_left_wheel_link:
-          Value: true
-        rbt1/rear_mount:
-          Value: true
-        rbt1/rear_right_wheel_link:
-          Value: true
-        rbt2/base_link:
-          Value: true
-        rbt2/chassis_link:
-          Value: true
-        rbt2/fenders_link:
-          Value: true
-        rbt2/front_laser:
-          Value: true
-        rbt2/front_laser_mount:
-          Value: true
-        rbt2/front_left_wheel_link:
-          Value: true
-        rbt2/front_mount:
-          Value: true
-        rbt2/front_right_wheel_link:
-          Value: true
-        rbt2/imu_link:
-          Value: true
-        rbt2/mid_mount:
-          Value: true
-        rbt2/navsat_link:
-          Value: true
-        rbt2/rear_left_wheel_link:
-          Value: true
-        rbt2/rear_mount:
-          Value: true
-        rbt2/rear_right_wheel_link:
-          Value: true
       Marker Scale: 1
       Name: TF
       Show Arrows: true
       Show Axes: true
       Show Names: true
       Tree:
-        map:
-          rbt1/base_link:
-            rbt1/chassis_link:
-              rbt1/fenders_link:
-                {}
-              rbt1/front_left_wheel_link:
-                {}
-              rbt1/front_right_wheel_link:
-                {}
-              rbt1/imu_link:
-                {}
-              rbt1/mid_mount:
-                rbt1/front_mount:
-                  rbt1/front_laser_mount:
-                    rbt1/front_laser:
-                      {}
-                rbt1/rear_mount:
-                  {}
-              rbt1/navsat_link:
-                {}
-              rbt1/rear_left_wheel_link:
-                {}
-              rbt1/rear_right_wheel_link:
-                {}
-          rbt2/base_link:
-            rbt2/chassis_link:
-              rbt2/fenders_link:
-                {}
-              rbt2/front_left_wheel_link:
-                {}
-              rbt2/front_right_wheel_link:
-                {}
-              rbt2/imu_link:
-                {}
-              rbt2/mid_mount:
-                rbt2/front_mount:
-                  rbt2/front_laser_mount:
-                    rbt2/front_laser:
-                      {}
-                rbt2/rear_mount:
-                  {}
-              rbt2/navsat_link:
-                {}
-              rbt2/rear_left_wheel_link:
-                {}
-              rbt2/rear_right_wheel_link:
-                {}
+        {}
+      Update Interval: 0
+      Value: false
+    - Alpha: 1
+      Class: rviz/RobotModel
+      Collision Enabled: false
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+        base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        chassis_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        fenders_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        front_laser:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        front_laser_mount:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        front_left_wheel_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        front_mount:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        front_right_wheel_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        imu_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        mid_mount:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        navsat_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rear_left_wheel_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rear_mount:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        rear_right_wheel_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+      Name: RobotModel
+      Robot Description: /rbt1/robot_description
+      TF Prefix: rbt1
       Update Interval: 0
       Value: true
+      Visual Enabled: true
+    - Alpha: 1
+      Class: rviz/RobotModel
+      Collision Enabled: false
+      Enabled: false
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+      Name: RobotModel
+      Robot Description: /rbt2/robot_description
+      TF Prefix: rbt2
+      Update Interval: 0
+      Value: false
+      Visual Enabled: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -275,25 +270,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 3.2907018661499023
+      Distance: 14.041461944580078
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -0.21265992522239685
-        Y: 0.12213947623968124
-        Z: -0.3519821763038635
+        X: -1.522725224494934
+        Y: -1.4443163871765137
+        Z: 1.1097127199172974
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.9204002618789673
+      Pitch: 0.6754010915756226
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 3.987212657928467
+      Yaw: 3.3822274208068848
     Saved: ~
 Window Geometry:
   Displays:

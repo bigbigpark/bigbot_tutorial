@@ -46,6 +46,7 @@
           izz="0.0013"/>
       </inertial>
     </link>
+    
     <gazebo reference="${prefix}_wheel_link">
       <material>Gazebo/DarkGrey</material>
     </gazebo>
@@ -71,6 +72,7 @@
   <!-- The joints and links. -->
   <xacro:wheel prefix="front_left">
     <origin xyz="${wheelbase/2} ${track/2} ${wheel_vertical_offset}" rpy="0 0 0" />
+
   </xacro:wheel>
   <xacro:wheel prefix="front_right">
     <origin xyz="${wheelbase/2} ${-track/2} ${wheel_vertical_offset}" rpy="0 0 0" />
@@ -81,13 +83,6 @@
   <xacro:wheel prefix="rear_right">
     <origin xyz="${-wheelbase/2} ${-track/2} ${wheel_vertical_offset}" rpy="0 0 0" />
   </xacro:wheel>
-
-  <!-- <link name="odom_link"></link>
-  <joint name="odom_joint" type="fixed">
-    <origin xyz="0 0 0" rpy="0 0 0" />
-    <parent link="odom"/>
-    <child link="base_link" />
-  </joint> -->
 
   <link name="base_link"></link>
   <joint name="base_link_joint" type="fixed">
