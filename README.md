@@ -8,11 +8,11 @@ I used rosbot 2.0 !
 
 <br/>
 
-OS: Ubuntu 18.04 (ROS melodic)
+**OS**: Ubuntu 18.04 (ROS melodic)
 
-CPU: i9-9th
+**CPU**: i9-9th
 
-GPU: RTX 2080
+**GPU**: RTX 2080
 
 <br/>
 
