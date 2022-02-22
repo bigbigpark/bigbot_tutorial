@@ -149,8 +149,8 @@ include_directories(
 #   ${catkin_LIBRARIES}
 # )
 
-add_executable(kf src/main.cpp)
-target_link_libraries(kf ${catkin_LIBRARIES})
+add_executable(main src/main.cpp)
+target_link_libraries(main ${catkin_LIBRARIES})
 
 #############
 ## Install ##

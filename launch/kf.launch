@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<launch>
-
-  <node name="kf" pkg="kf_rosbot_tutorial" type="kf" output="screen" respawn="false"/>
-
-
-
-</launch>

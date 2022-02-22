@@ -1,0 +1,18 @@
+<launch>
+  <arg name="rviz" default="false"/>
+
+  <include file="$(find bigbot_tutorial)/launch/map.launch">
+    <arg name="rviz" default="$(arg rviz)"/>
+  </include>
+
+  <include file="$(find bigbot_tutorial)/launch/one_robot.launch">
+    <arg name="robot_name" default="bigbot"/>
+    <arg name="init_pose"  default="-x 3 -y 3 -z 0"/>
+  </include>
+
+  <!-- Show in Rviz   -->
+  <group if="$(arg rviz)">
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find bigbot_tutorial)/rviz/rosbot.rviz" required="true" output="screen"/>
+  </group>
+
+</launch>
