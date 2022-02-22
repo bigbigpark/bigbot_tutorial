@@ -20,10 +20,10 @@ int main(int argc, char** argv)
   double timestamp = 0.0;
   while(ros::ok())
   {
-    t_make.tic();
     ROS_INFO("timestamp: %f", timestamp);
     timestamp += 0.2;
 
+    t_make.tic();
     if (timestamp < 10)
     {
       cmd_vel.linear.x  = 0.2;
@@ -49,7 +49,7 @@ int main(int argc, char** argv)
 
 
     pubCmdVel.publish(cmd_vel);
-    t_make.toc();
+    cout << t_make.toc() <<  endl;
 
     r.sleep();
   }
