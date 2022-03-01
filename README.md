@@ -16,6 +16,8 @@ I used rosbot 2.0
 
 <br/>
 
+<hr>
+
 ## 1. Install rosbot description
 
 ~~~bash
@@ -43,6 +45,30 @@ $ cd ${WORKING_DIRECTORY} && catkin build
 ~~~
 
 <br/>
+
+## 3. Run code
+
+There are two different mode here <br/>
+One is `one_robot.launch` and the other is `robots.launch`
+You can run one robot with gazebo+rviz,
+~~~bash
+$ roslaunch bigbot_tutorial bigbot_gazebo.launch rviz:=true
+~~~
+<hr>
+
+## 1. Turning Control
+
+I have implemented turning control using LOS & CTE errors <br/>
+
+~~~bash
+$ rosrun bigbot_tutorial turningControl
+~~~
+
+
+
+
+
+<hr>
 
 ## Future work
 
