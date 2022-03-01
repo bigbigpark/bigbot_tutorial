@@ -11,7 +11,7 @@
 
   <!-- Show in Rviz   -->
   <group if="$(arg rviz)">
-    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find bigbot_tutorial)/rviz/rosbot.rviz" required="true" output="screen"/>
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find bigbot_tutorial)/rviz/multi_robot.rviz" required="true" output="screen"/>
   </group>
 
 </launch>
