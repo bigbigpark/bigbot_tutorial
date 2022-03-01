@@ -29,3 +29,9 @@ target_link_libraries(turningControl
   ${catkin_LIBRARIES}
   ${Eigen_LIBRARIES}
 )
+
+add_executable(imuOdom src/imuOdom.cpp)
+target_link_libraries(imuOdom 
+  ${catkin_LIBRARIES}
+  # ${Eigen_LIBRARIES}
+)

@@ -6,7 +6,7 @@ Panels:
       Expanded:
         - /Global Options1
         - /Odometry1/Shape1
-        - /Path1
+        - /Imu1
       Splitter Ratio: 0.5
     Tree Height: 726
   - Class: rviz/Selection
@@ -77,19 +77,78 @@ Visualization Manager:
       Value: false
       Visual Enabled: true
     - Class: rviz/TF
-      Enabled: false
+      Enabled: true
       Frame Timeout: 15
       Frames:
-        All Enabled: true
+        All Enabled: false
+        bigbot/base_link:
+          Value: true
+        bigbot/body_link:
+          Value: false
+        bigbot/camera_depth_frame:
+          Value: false
+        bigbot/camera_link:
+          Value: false
+        bigbot/camera_rgb_frame:
+          Value: false
+        bigbot/front_left_wheel:
+          Value: false
+        bigbot/front_right_wheel:
+          Value: false
+        bigbot/laser:
+          Value: false
+        bigbot/odom:
+          Value: true
+        bigbot/range_fl:
+          Value: false
+        bigbot/range_fr:
+          Value: false
+        bigbot/range_rl:
+          Value: false
+        bigbot/range_rr:
+          Value: false
+        bigbot/rear_left_wheel:
+          Value: false
+        bigbot/rear_right_wheel:
+          Value: false
+        bigbot/top:
+          Value: false
       Marker Scale: 1
       Name: TF
-      Show Arrows: true
+      Show Arrows: false
       Show Axes: true
       Show Names: true
       Tree:
-        {}
+        bigbot/odom:
+          bigbot/base_link:
+            bigbot/body_link:
+              bigbot/camera_link:
+                bigbot/camera_depth_frame:
+                  {}
+                bigbot/camera_rgb_frame:
+                  {}
+              bigbot/front_left_wheel:
+                {}
+              bigbot/front_right_wheel:
+                {}
+              bigbot/laser:
+                {}
+              bigbot/range_fl:
+                {}
+              bigbot/range_fr:
+                {}
+              bigbot/range_rl:
+                {}
+              bigbot/range_rr:
+                {}
+              bigbot/rear_left_wheel:
+                {}
+              bigbot/rear_right_wheel:
+                {}
+              bigbot/top:
+                {}
       Update Interval: 0
-      Value: false
+      Value: true
     - Class: rviz/Image
       Enabled: false
       Image Topic: /bigbot/camera/depth/image_raw
@@ -187,6 +246,15 @@ Visualization Manager:
       Topic: /bigbot/path
       Unreliable: false
       Value: true
+    - Alpha: 0.5
+      Class: rviz_plugin_tutorials/Imu
+      Color: 204; 51; 204
+      Enabled: true
+      History Length: 1
+      Name: Imu
+      Topic: /bigbot/imu
+      Unreliable: false
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -215,25 +283,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 23.195898056030273
+      Distance: 17.88302230834961
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -0.5581705570220947
-        Y: -0.11481013149023056
-        Z: 2.228337287902832
+        X: 2.1637802124023438
+        Y: 2.538682222366333
+        Z: 7.2772297859191895
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.5697963237762451
+      Pitch: 0.829797089099884
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 4.708593368530273
+      Yaw: 4.083593845367432
     Saved: ~
 Window Geometry:
   Displays:
