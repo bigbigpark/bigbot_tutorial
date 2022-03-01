@@ -84,11 +84,17 @@ bool MyRobot::init()
   trg_wp.push_back( make_pair(10, 10) );
   trg_wp.push_back( make_pair( 0, 10) );
   trg_wp.push_back( make_pair( 0,  0) );
+
+  // trg_wp.push_back( make_pair( 0,-10) );
+  // trg_wp.push_back( make_pair(-10,-10) );
+  // trg_wp.push_back( make_pair(-10,  0) );
+  // trg_wp.push_back( make_pair( 0,  0) );
+
   cur_wp_idx = 0;
 
   dt = 0.1;
 
-  u_max << 2, 1.5;
+  u_max << 1.0, 1.5;
 
   R_acc = 1.5;
   isEnd = false;
@@ -139,12 +145,12 @@ void MyRobot::autoPilot()
   error_dot_cte = error_cte / dt;
 
   // K control for linear velocity
-  double Kp_x = 1.5;
+  double Kp_x = 1.5;  // 1.5
   u(0,0) = Kp_x*error_dist;
 
   // KD control for angular velocity
-  double Kp_yaw_los = 0.9, Kd_yaw_los = 0.8;
-  double Kp_yaw_cte = 0.5, Kd_yaw_cte = 0;
+  double Kp_yaw_los = 3, Kd_yaw_los = 0.001;    // 3,    0.001
+  double Kp_yaw_cte = 0.01, Kd_yaw_cte = 0.001; // 0.01, 0.001
   u(1,0) = Kp_yaw_los*error_los + Kd_yaw_los*error_dot_los + Kp_yaw_cte*error_cte + Kd_yaw_cte*error_dot_cte;
 
 
@@ -210,6 +216,8 @@ int main(int argc, char** argv)
   }
 
   ROS_WARN("END Criteria");
+  mr.stopRobot();
+  r.sleep();
   mr.stopRobot();
 
   return 0;
