@@ -6,7 +6,6 @@ Panels:
       Expanded:
         - /Global Options1
         - /Odometry1/Shape1
-        - /Imu2
         - /Imu2/Box properties1
       Splitter Ratio: 0.5
     Tree Height: 728
@@ -28,7 +27,7 @@ Panels:
     Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: ""
+    SyncSource: LaserScan
 Preferences:
   PromptSaveOnExit: true
 Toolbars:
@@ -279,6 +278,34 @@ Visualization Manager:
       Unreliable: false
       Value: true
       fixed_frame_orientation: true
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/LaserScan
+      Color: 255; 255; 255
+      Color Transformer: Intensity
+      Decay Time: 0
+      Enabled: true
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Min Color: 0; 0; 0
+      Name: LaserScan
+      Position Transformer: XYZ
+      Queue Size: 10
+      Selectable: true
+      Size (Pixels): 5
+      Size (m): 0.10000000149011612
+      Style: Points
+      Topic: /bigbot/scan
+      Unreliable: false
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -314,18 +341,18 @@ Visualization Manager:
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.054088473320007324
-        Y: -0.15234950184822083
-        Z: 4.751282215118408
+        X: 4.629167079925537
+        Y: 1.1845015287399292
+        Z: 5.536294460296631
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.7447972297668457
+      Pitch: 0.9347970485687256
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 3.943593978881836
+      Yaw: 4.718599319458008
     Saved: ~
 Window Geometry:
   Displays:
