@@ -35,6 +35,12 @@ target_link_libraries(turningControl
   ${Eigen_LIBRARIES}
 )
 
+add_executable(formationControl src/formationControl.cpp)
+target_link_libraries(formationControl 
+  ${catkin_LIBRARIES}
+  ${Eigen_LIBRARIES}
+)
+
 add_executable(imuOdom src/imuOdom.cpp)
 target_link_libraries(imuOdom 
   ${catkin_LIBRARIES}
@@ -49,9 +55,8 @@ target_link_libraries(webot_pose_sub
   ${catkin_LIBRARIES}
 )
 
-# add_executable(mpc_basic_node src/mpc_basic.cpp)
-# target_link_libraries(mpc_basic_node 
-#   ${catkin_LIBRARIES}
-#   # ${CASADI_LIBRARIES}
-# )
+add_executable(mpc_basic_node src/mpc_basic.cpp)
+target_link_libraries(mpc_basic_node 
+  ${catkin_LIBRARIES}
+)
 

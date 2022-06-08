@@ -2,7 +2,7 @@
 
 <launch>
   <arg name="gui"       default="true"/>
-  <arg name="rviz"      default="true"/>
+  <arg name="rviz"      default="false"/>
   <arg name="config"    default="base" />
   <arg name="ns1"       default="rbt1"/>
   <arg name="ns2"       default="rbt2"/>
@@ -22,7 +22,7 @@
   <include file="$(find bigbot_base)/launch/base_jackal.launch">
     <arg name="ns"            value="$(arg ns1)"/>
     <arg name="config"        value="$(arg config)"/>
-    <arg name="x"             value="3"/>
+    <arg name="x"             value="0"/>
     <arg name="y"             value="0"/>
   </include>
 
@@ -30,20 +30,20 @@
   <include file="$(find bigbot_base)/launch/base_jackal.launch">
     <arg name="ns"            value="$(arg ns2)"/>
     <arg name="config"        default="$(arg config)" />
-    <arg name="x"             value="0"/>
+    <arg name="x"             value="-1"/>
     <arg name="y"             value="3"/>
   </include>
 
   <!-- Spawn Robot 3 -->
-  <!-- <include file="$(find bigbot_base)/launch/base/base_jackal.launch">
+  <include file="$(find bigbot_base)/launch/base_jackal.launch">
     <arg name="ns"            value="$(arg ns3)"/>
     <arg name="config"        default="$(arg config)" />
-    <arg name="x"             value="0"/>
+    <arg name="x"             value="-1"/>
     <arg name="y"             value="-3"/>
-  </include> -->
+  </include>
 
   <!-- Spawn Robot 4 -->
-  <!-- <include file="$(find bigbot_base)/launch/base/base_jackal.launch">
+  <!-- <include file="$(find bigbot_base)/launch/base_jackal.launch">
     <arg name="ns"            value="$(arg ns4)"/>
     <arg name="config"        default="$(arg config)" />
     <arg name="x"             value="0"/>
@@ -51,7 +51,7 @@
   </include> -->
 
   <!-- Spawn Robot 5 -->
-  <!-- <include file="$(find bigbot_base)/launch/base/base_jackal.launch">
+  <!-- <include file="$(find bigbot_base)/launch/base_jackal.launch">
     <arg name="ns"            value="$(arg ns5)"/>
     <arg name="config"        default="$(arg config)" />
     <arg name="x"             value="0"/>
@@ -61,9 +61,9 @@
 
 
   <!-- View in RVIZ. -->
-  <!-- <group if="$(arg rviz)">
+  <group if="$(arg rviz)">
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(find bigbot_base)/rviz/two_jackals.rviz" >
     </node>
-  </group> -->
+  </group>
 
 </launch>

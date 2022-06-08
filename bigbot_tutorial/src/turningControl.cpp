@@ -76,8 +76,8 @@ bool MyRobot::init()
   pose_ << 1, 0, 0;
   prev_pose_ << 0, 0, 0;
 
-  odom_sub_ = nh_.subscribe("/bigbot/odom", 10, &MyRobot::odomGazeboCallback, this);
-  cmd_vel_pub_ = nh_.advertise<geometry_msgs::Twist>("/bigbot/cmd_vel", 10);
+  odom_sub_ = nh_.subscribe("/rbt1/odom_ground_truth", 10, &MyRobot::odomGazeboCallback, this);
+  cmd_vel_pub_ = nh_.advertise<geometry_msgs::Twist>("/rbt1/jackal_velocity_controller/cmd_vel", 10);
   path_pub_  = nh_.advertise<nav_msgs::Path>("/bigbot/path", 10);
 
   trg_wp.push_back( make_pair(10,  0) );
@@ -94,7 +94,7 @@ bool MyRobot::init()
 
   dt = 0.1;
 
-  u_max << 1.0, 1.5;
+  u_max << 2.0, 1.5;
 
   R_acc = 1.5;
   isEnd = false;
@@ -144,14 +144,16 @@ void MyRobot::autoPilot()
   error_cte = error_dist * sin( pi_to_pi(error_los - prev_pose_(2,0)) );
   error_dot_cte = error_cte / dt;
 
-  // K control for linear velocity
+  // P control for linear velocity
   double Kp_x = 1.5;  // 1.5
   u(0,0) = Kp_x*error_dist;
 
-  // KD control for angular velocity
+  // PD control for angular velocity
   double Kp_yaw_los = 3, Kd_yaw_los = 0.001;    // 3,    0.001
   double Kp_yaw_cte = 0.01, Kd_yaw_cte = 0.001; // 0.01, 0.001
   u(1,0) = Kp_yaw_los*error_los + Kd_yaw_los*error_dot_los + Kp_yaw_cte*error_cte + Kd_yaw_cte*error_dot_cte;
+
+  // Potential func
 
 
   // Actuator saturation
