@@ -84,7 +84,11 @@ public:
 
 private:
   // Gain
-  double Kp = 0.8;
+  double Kp = 1.5;
+  double max_v =  1.5; // [m/s]
+  double min_v = -1.5; // [m/s]
+  double max_w =  1.5; // [rad/s]
+  double min_w = -1.5; // [rad/s]
 
   // ROS
   ros::NodeHandle nh_;
@@ -169,17 +173,25 @@ vector<Eigen::Vector2f> FormationControl::computeCmdVel()
 {
   vector<Eigen::Vector2f> cmd_vel(num_of_robot_);
 
-  Eigen::Vector2f error_xy;  // x_err, y_err, th_err
+  double error_x  = 0.0;
+  double error_y  = 0.0;
   double error_th = 0.0;
   int index = 0;
   for(auto& robot: robot_)
   {
-    error_xy(0) = robot.ref_traj(0) - robot.xpose(0);
-    error_xy(1) = robot.ref_traj(1) - robot.xpose(1);
-    error_th    = robot.ref_traj(2) - robot.xpose(2);
-    double error_dist = error_xy.norm();
+    error_x   = robot.ref_traj(0) - robot.xpose(0);
+    error_y   = robot.ref_traj(1) - robot.xpose(1);
+    error_th  = robot.ref_traj(2) - robot.xpose(2);
 
-    cmd_vel[index](0) = Kp*error_dist;
+    if (robot.name == "rbt1")
+    {
+      cout << "error_x: " << error_x << endl;
+    }
+
+    cmd_vel[index](0) = Kp*error_x;
+
+    if (cmd_vel[index](0) > max_v) cmd_vel[index](0) = max_v;
+    if (cmd_vel[index](0) < min_v) cmd_vel[index](0) = min_v;
 
     index++;
   }
@@ -200,7 +212,7 @@ void FormationControl::generateRefTrajectory()
 void FormationControl::generateSwarmCentroid(int timestamp)
 {
   // Set swarm_centroid_
-  swarm_centroid_(0) += timestamp*0.01;
+  swarm_centroid_(0) += 0.002*timestamp;
   swarm_centroid_(1) += 0.0;
   swarm_centroid_(2) += 0.0;
 }
