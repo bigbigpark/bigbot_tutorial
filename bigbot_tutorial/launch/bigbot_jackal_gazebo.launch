@@ -35,12 +35,12 @@
   </include>
 
   <!-- Spawn Robot 3 -->
-  <include file="$(find bigbot_base)/launch/base_jackal.launch">
+  <!-- <include file="$(find bigbot_base)/launch/base_jackal.launch">
     <arg name="ns"            value="$(arg ns3)"/>
     <arg name="config"        default="$(arg config)" />
     <arg name="x"             value="-1"/>
     <arg name="y"             value="-3"/>
-  </include>
+  </include> -->
 
   <!-- Spawn Robot 4 -->
   <!-- <include file="$(find bigbot_base)/launch/base_jackal.launch">
@@ -62,7 +62,7 @@
 
   <!-- View in RVIZ. -->
   <group if="$(arg rviz)">
-    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find bigbot_base)/rviz/two_jackals.rviz" >
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find bigbot_base)/rviz/APF.rviz" >
     </node>
   </group>
 

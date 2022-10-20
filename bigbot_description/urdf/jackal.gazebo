@@ -48,7 +48,7 @@
       <frameName>map</frameName>
       <bodyName>base_link</bodyName>
       <topicName>odom_ground_truth</topicName>
-      <updateRate>10</updateRate>
+      <updateRate>100</updateRate>
     </plugin>
   </gazebo>
 
