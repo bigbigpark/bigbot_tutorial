@@ -1,0 +1,21 @@
+<launch>
+  <!-- namespace -->
+  <arg name="ns"    default="jackal1"/>
+  <arg name="x"     default="0"/>
+  <arg name="y"     default="0"/>
+  <arg name="z"     default="0"/>
+  <arg name="roll"  default="0"/>
+  <arg name="pitch" default="0"/>
+  <arg name="yaw"   default="0"/>
+
+  <rosparam command="load" file="$(find jackal_control)/config/control.yaml" ns="$(arg ns)" />
+  <param name="$(arg ns)/jackal_velocity_controller/odom_frame_id" value="$(arg ns)/odom"/>
+  <param name="$(arg ns)/jackal_velocity_controller/base_frame_id" value="$(arg ns)/base_link"/>
+
+  <node name="controller_spawner" pkg="controller_manager" type="spawner"
+        args="jackal_joint_publisher jackal_velocity_controller" ns="$(arg ns)"/>
+
+  <node pkg="tf" type="static_transform_publisher" name="static_map_odom_tf" ns="$(arg ns)"
+        args="$(arg x) $(arg y) $(arg z) 0 0 0 /map $(arg ns)/odom 100"/>
+
+</launch>

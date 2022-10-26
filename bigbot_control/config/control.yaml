@@ -36,5 +36,6 @@ jackal_velocity_controller:
       max_velocity           : 4.0   # rad/s
       has_acceleration_limits: true
       max_acceleration       : 25.0   # rad/s^2
-
-
+# gazebo_ros_control/pid_gains:
+#   base_left_wheel_joint: { p: 1.0, i: 1.0, d: 0.0 }
+#   base_right_wheel_joint: { p: 1.0, i: 1.0, d: 0.0 }

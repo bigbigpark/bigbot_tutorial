@@ -1,8 +1,6 @@
 <?xml version="1.0"?>
 <robot name="jackal" xmlns:xacro="http://www.ros.org/wiki/xacro">
-
   <xacro:arg name="namespace" default="jackal1" />
-
   <xacro:property name="PI" value="3.1415926535897931" />
 
   <xacro:property name="wheelbase" value="0.262" />
@@ -253,7 +251,7 @@
   </joint>
 
   <!-- Adding the ULU02 -->
-  <link name="enclosure_mount_link">
+  <!-- <link name="enclosure_mount_link">
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
@@ -283,7 +281,8 @@
     <parent link="enclosure_mount_link" />
     <child link="zed_camera_center" />
     <origin xyz="0.175 0 0.115" />
-  </joint>
+  </joint> -->
+
   <!-- Adding lidar frame -->
   <!-- <link name="lidar_mounting_frame">
 	<origin rpy="0 0 0" xyz="0 0 0"/>
@@ -339,7 +338,6 @@
     <origin xyz="0 0 0.035" rpy="0 0 0" />
   </OS1-64> -->
 
-
   <!-- Bring in simulation data for Gazebo. -->
   <xacro:include filename="$(find bigbot_description)/urdf/jackal.gazebo" />
 
@@ -350,4 +348,12 @@
 
   <!-- Optional custom includes. -->
   <xacro:include filename="$(optenv JACKAL_URDF_EXTRAS empty.urdf)" />
+
+  <!-- VLP-16 -->
+  <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>
+  <VLP-16 parent="base_link" name="velodyne" topic="/velodyne_points" hz="10" samples="360" gpu="true" lasers="16" max_range="100">
+    <origin xyz="0 0 0.4" rpy="0 0 0" />
+  </VLP-16>
+
+  
 </robot>
