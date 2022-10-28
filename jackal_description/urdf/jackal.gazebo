@@ -10,7 +10,7 @@
 
   <gazebo>
     <plugin name="imu_controller" filename="libhector_gazebo_ros_imu.so">
-      <robotNamespace>/</robotNamespace>
+      <robotNamespace>/$(arg namespace)</robotNamespace>
       <updateRate>100.0</updateRate>
       <bodyName>imu_link</bodyName>
       <topicName>imu/data</topicName>
@@ -26,7 +26,7 @@
   <gazebo>
     <plugin name="gps_controller" filename="libhector_gazebo_ros_gps.so">
       <updateRate>40</updateRate>
-      <robotNamespace>/</robotNamespace>
+      <robotNamespace>/$(arg namespace)</robotNamespace>
       <bodyName>navsat_link</bodyName>
       <frameId>base_link</frameId>
       <topicName>/navsat/fix</topicName>

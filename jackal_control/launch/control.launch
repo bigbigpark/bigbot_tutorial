@@ -1,6 +1,6 @@
+<?xml version="1.0"?>
 <launch>
-  <!-- namespace -->
-  <arg name="ns"    default="jackal1"/>
+  <arg name="ns" default="jackal1"/>
   <arg name="x"     default="0"/>
   <arg name="y"     default="0"/>
   <arg name="z"     default="0"/>
@@ -15,7 +15,12 @@
   <node name="controller_spawner" pkg="controller_manager" type="spawner"
         args="jackal_joint_publisher jackal_velocity_controller" ns="$(arg ns)"/>
 
+  <!-- If the Jackals do not have a global position estimate (i.e. something to
+       publish the map->odom link, usually a 'robot_localization' node with GPS),
+       Then the transform from map->odom can be produced statically. The start 
+       position must match the start position used in Gazebo but Gazebo will 
+       handle rotation transform.
+       (x y z yaw pitch roll frame_id child_frame_id period_in_ms) -->
   <node pkg="tf" type="static_transform_publisher" name="static_map_odom_tf" ns="$(arg ns)"
         args="$(arg x) $(arg y) $(arg z) 0 0 0 /map $(arg ns)/odom 100"/>
-
 </launch>

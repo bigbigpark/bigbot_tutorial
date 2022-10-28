@@ -9,7 +9,7 @@
   <arg name="ns3"       default="rbt3"/>
   <arg name="ns4"       default="rbt4"/>
   <arg name="ns5"       default="rbt5"/>
-  <arg name="world_file" default="$(find bigbot_tutorial)/worlds/formation"/>
+  <arg name="world_file" default="$(find bigbot_tutorial)/worlds/formation_w_obs.world"/>
 
   <!-- Start Gazebo. -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -23,15 +23,15 @@
   <include file="$(find bigbot_base)/launch/base_jackal.launch">
     <arg name="ns"            value="$(arg ns1)"/>
     <arg name="config"        value="$(arg config)"/>
-    <arg name="x"             value="0"/>
-    <arg name="y"             value="0"/>
+    <arg name="x"             value="3.0"/>
+    <arg name="y"             value="0.0"/>
   </include>
 
   <!-- Spawn Robot 2 -->
   <include file="$(find bigbot_base)/launch/base_jackal.launch">
     <arg name="ns"            value="$(arg ns2)"/>
     <arg name="config"        default="$(arg config)" />
-    <arg name="x"             value="0.0"/>
+    <arg name="x"             value="1.0"/>
     <arg name="y"             value="2.0"/>
   </include>
 
@@ -39,7 +39,7 @@
   <include file="$(find bigbot_base)/launch/base_jackal.launch">
     <arg name="ns"            value="$(arg ns3)"/>
     <arg name="config"        default="$(arg config)" />
-    <arg name="x"             value="0.0"/>
+    <arg name="x"             value="1.0"/>
     <arg name="y"             value="-2.0"/>
   </include>
 
