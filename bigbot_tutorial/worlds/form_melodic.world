@@ -628,68 +628,11 @@
       </link>
       <pose frame=''>132.374 30.9781 0 0 -0 0</pose>
     </model>
-    <model name='Gas Station'>
-      <static>1</static>
-      <link name='link'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <uri>model://gas_station/meshes/gas_station.dae</uri>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://gas_station/meshes/gas_station.dae</uri>
-            </mesh>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://gas_station/materials/scripts</uri>
-              <uri>model://gas_station/materials/textures</uri>
-              <name>GasStation/Diffuse</name>
-            </script>
-            <shader type='normal_map_tangent_space'>
-              <normal_map>GasStation_Normal.png</normal_map>
-            </shader>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>94.5389 -20.6722 0 0 -0 0</pose>
-    </model>
     <state world_name='default'>
-      <sim_time>93 91000000</sim_time>
-      <real_time>30 555064844</real_time>
-      <wall_time>1667204621 701569378</wall_time>
-      <iterations>30526</iterations>
-      <model name='Gas Station'>
-        <pose frame=''>94.5389 -20.6722 0 0 -0 1.57714</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose frame=''>94.5389 -20.6722 0 0 -0 1.57714</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
+      <sim_time>269 240000000</sim_time>
+      <real_time>176 346191859</real_time>
+      <wall_time>1667218284 914950683</wall_time>
+      <iterations>176149</iterations>
       <model name='ambulance'>
         <pose frame=''>-15.896 -4.96899 0 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -711,30 +654,30 @@
         </link>
       </model>
       <model name='cylinder'>
-        <pose frame=''>4.2031 2.32295 0.999994 0 0 -1e-06</pose>
+        <pose frame=''>14.5194 2.90161 0.999991 0 0 -1e-06</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>4.2031 2.32295 0.999994 0 0 -1e-06</pose>
+          <pose frame=''>14.5194 2.90161 0.999991 0 0 -1e-06</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 -9.8 0 -0 0</acceleration>
           <wrench>0 0 -9.8 0 -0 0</wrench>
         </link>
       </model>
       <model name='cylinder_0'>
-        <pose frame=''>7.55624 -2.69822 0.999997 0 -0 -1e-06</pose>
+        <pose frame=''>18.804 -2.73761 0.999993 0 0 -2e-06</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>7.55624 -2.69822 0.999997 0 -0 -1e-06</pose>
+          <pose frame=''>18.804 -2.73761 0.999993 0 0 -2e-06</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 -9.8 0 -0 0</acceleration>
           <wrench>0 0 -9.8 0 -0 0</wrench>
         </link>
       </model>
       <model name='grocery_store'>
-        <pose frame=''>132.374 30.9781 0 0 -0 0</pose>
+        <pose frame=''>147.206 27.7938 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>132.374 30.9781 0 0 -0 0</pose>
+          <pose frame=''>147.206 27.7938 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -760,11 +703,21 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='post_office'>
-        <pose frame=''>20.5231 -17.8432 0 0 -0 0</pose>
+      <model name='osrf_first_office_0'>
+        <pose frame=''>111.877 -22.9751 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>20.5231 -17.8432 0 0 -0 0</pose>
+          <pose frame=''>111.877 -22.9751 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='post_office'>
+        <pose frame=''>20.3457 -17.8377 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>20.3457 -17.8377 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -780,11 +733,31 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
+      <model name='salon_clone'>
+        <pose frame=''>82.4052 -20.2524 0 0 0 -3.13925</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>82.4052 -20.2524 0 0 0 -3.13925</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
       <model name='school'>
         <pose frame=''>7.16997 28.4726 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
           <pose frame=''>7.16997 28.4726 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='school_0'>
+        <pose frame=''>160.462 -24.4501 0 0 -0 3.11992</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>160.462 -24.4501 0 0 -0 3.11992</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -816,10 +789,120 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose frame=''>-46.0042 -1.71629 26.9945 0 0.453798 0.008189</pose>
+        <pose frame=''>-42.9472 0.264654 26.0329 0 0.413796 -0.012543</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
     </gui>
+    <model name='school_0'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://school/meshes/school.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://school/meshes/school.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>144.269 -19.5473 0 0 -0 0</pose>
+    </model>
+    <model name='salon_clone'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <pose frame=''>0 0 5.69469 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>7.21297 5.37875 11.3894</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 -0.903605 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://salon/meshes/salon.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>82.4052 -20.2524 0 0 -0 0</pose>
+    </model>
+    <model name='osrf_first_office_0'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://osrf_first_office/meshes/osrf_first_office.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://osrf_first_office/meshes/osrf_first_office.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>108.792 -14.9522 0 0 -0 0</pose>
+    </model>
   </world>
 </sdf>
