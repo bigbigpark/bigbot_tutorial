@@ -676,10 +676,10 @@
       <pose frame=''>94.5389 -20.6722 0 0 -0 0</pose>
     </model>
     <state world_name='default'>
-      <sim_time>62 565000000</sim_time>
-      <real_time>393 778230921</real_time>
-      <wall_time>1667201828 149756976</wall_time>
-      <iterations>62565</iterations>
+      <sim_time>93 91000000</sim_time>
+      <real_time>30 555064844</real_time>
+      <wall_time>1667204621 701569378</wall_time>
+      <iterations>30526</iterations>
       <model name='Gas Station'>
         <pose frame=''>94.5389 -20.6722 0 0 -0 1.57714</pose>
         <scale>1 1 1</scale>
@@ -711,20 +711,20 @@
         </link>
       </model>
       <model name='cylinder'>
-        <pose frame=''>4.2031 2.32295 0.999996 0 -0 -1e-06</pose>
+        <pose frame=''>4.2031 2.32295 0.999994 0 0 -1e-06</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>4.2031 2.32295 0.999996 0 -0 -1e-06</pose>
+          <pose frame=''>4.2031 2.32295 0.999994 0 0 -1e-06</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 -9.8 0 -0 0</acceleration>
           <wrench>0 0 -9.8 0 -0 0</wrench>
         </link>
       </model>
       <model name='cylinder_0'>
-        <pose frame=''>7.55624 -2.69822 0.999993 0 0 -1e-06</pose>
+        <pose frame=''>7.55624 -2.69822 0.999997 0 -0 -1e-06</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>7.55624 -2.69822 0.999993 0 0 -1e-06</pose>
+          <pose frame=''>7.55624 -2.69822 0.999997 0 -0 -1e-06</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 -9.8 0 -0 0</acceleration>
           <wrench>0 0 -9.8 0 -0 0</wrench>
@@ -816,7 +816,7 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose frame=''>-67.741 -110.375 102.132 0 0.577797 0.688191</pose>
+        <pose frame=''>-46.0042 -1.71629 26.9945 0 0.453798 0.008189</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
