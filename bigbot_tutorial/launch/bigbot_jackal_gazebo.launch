@@ -23,7 +23,7 @@
   <include file="$(find bigbot_base)/launch/base_jackal.launch">
     <arg name="ns"            value="$(arg ns1)"/>
     <arg name="config"        value="$(arg config)"/>
-    <arg name="x"             value="3.0"/>
+    <arg name="x"             value="0.0"/>
     <arg name="y"             value="0.0"/>
   </include>
 
@@ -31,7 +31,7 @@
   <include file="$(find bigbot_base)/launch/base_jackal.launch">
     <arg name="ns"            value="$(arg ns2)"/>
     <arg name="config"        default="$(arg config)" />
-    <arg name="x"             value="1.0"/>
+    <arg name="x"             value="0.0"/>
     <arg name="y"             value="2.0"/>
   </include>
 
@@ -39,7 +39,7 @@
   <include file="$(find bigbot_base)/launch/base_jackal.launch">
     <arg name="ns"            value="$(arg ns3)"/>
     <arg name="config"        default="$(arg config)" />
-    <arg name="x"             value="1.0"/>
+    <arg name="x"             value="0.0"/>
     <arg name="y"             value="-2.0"/>
   </include>
 
