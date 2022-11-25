@@ -9,7 +9,7 @@
   <arg name="ns3"       default="rbt3"/>
   <arg name="ns4"       default="rbt4"/>
   <arg name="ns5"       default="rbt5"/>
-  <arg name="world_file" default="$(find bigbot_tutorial)/worlds/form_melodic.world"/>
+  <arg name="world_file" default="$(find bigbot_tutorial)/worlds/form_melodic_obs_defense.world"/>
 
   <!-- Start Gazebo. -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
