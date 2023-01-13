@@ -43,7 +43,8 @@
   <gazebo>
     <plugin name="ground_truth" filename="libgazebo_ros_p3d.so">
       <robotNamespace>/$(arg namespace)</robotNamespace>
-      <frameName>map</frameName>
+      <!-- <frameName>map</frameName> -->
+      <frameName>world</frameName>
       <bodyName>base_link</bodyName>
       <topicName>odom_ground_truth</topicName>
       <updateRate>100</updateRate>
