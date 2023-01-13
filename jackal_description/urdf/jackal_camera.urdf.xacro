@@ -290,36 +290,10 @@
     <origin xyz="0.0 0.0 0.0" />
   </joint>
 
-  <!--  Camera link -->
-  <link name="camera_link">
-    <inertial>
-      <mass value="0.117"/>
-      <inertia ixx="1.6731e-4" ixy="0.0" ixz="0.0" iyy="3.3446e-5" iyz="0.0" izz="1.4974e-4"/>
-    </inertial>
-    <collision name="collision">
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <geometry>
-        <box size="0.01 0.01 0.01"/>
-      </geometry>
-    </collision>
-    <visual name="visual">
-      <cast_shadows>false</cast_shadows>
-      <geometry>
-        <mesh filename="$(find realsense2_description)/meshes/d435.dae"/>
-      </geometry>
-    </visual>
-  </link>
-
-  <!-- VLP-16 -->
-  <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>
-  <xacro:VLP-16 parent="velodyne_mount" name="velodyne" topic="$(arg namespace)/velodyne_points" hz="10" samples="360" gpu="true" lasers="16" max_range="100">
-    <origin xyz="0 0 0.3" rpy="0 0 0" />
-  </xacro:VLP-16>
-
   <!-- Intel RealSense -->
-  <!-- <xacro:include filename="$(find realsense2_description)/urdf/_d435.urdf.xacro" />
+  <xacro:include filename="$(find realsense2_description)/urdf/_d435.urdf.xacro" />
   <xacro:sensor_d435 name="camera" topics_ns="$(arg namespace)/camera" parent="velodyne_mount" publish_pointcloud="true">
     <origin xyz="0 0 0.3" rpy="0 0 0" />
-  </xacro:sensor_d435>   -->
+  </xacro:sensor_d435>  
   
 </robot>
