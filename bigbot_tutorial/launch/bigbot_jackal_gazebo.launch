@@ -44,20 +44,20 @@
   </include>
 
   <!-- Spawn Robot 4 -->
-  <!-- <include file="$(find bigbot_base)/launch/base_jackal.launch">
+  <include file="$(find bigbot_base)/launch/base_jackal.launch">
     <arg name="ns"            value="$(arg ns4)"/>
     <arg name="config"        default="$(arg config)" />
     <arg name="x"             value="0.0"/>
-    <arg name="y"             value="2.0"/>
-  </include> -->
+    <arg name="y"             value="4.0"/>
+  </include>
   
   <!-- Spawn Robot 5 -->
-  <!-- <include file="$(find bigbot_base)/launch/base_jackal.launch">
+  <include file="$(find bigbot_base)/launch/base_jackal.launch">
     <arg name="ns"            value="$(arg ns5)"/>
     <arg name="config"        default="$(arg config)" />
     <arg name="x"             value="0.0"/>
-    <arg name="y"             value="-2.0"/>
-  </include> -->
+    <arg name="y"             value="-4.0"/>
+  </include>
 
   <!-- View in RVIZ. -->
   <group if="$(arg rviz)">

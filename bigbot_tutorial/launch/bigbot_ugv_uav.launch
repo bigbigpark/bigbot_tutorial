@@ -42,6 +42,22 @@
     <arg name="y"             value="-2.0"/>
   </include>
 
+  <!-- Spawn Robot 3 -->
+  <include file="$(find bigbot_base)/launch/base_jackal.launch">
+    <arg name="ns"            value="$(arg ns4)"/>
+    <arg name="config"        default="$(arg config)" />
+    <arg name="x"             value="3.0"/>
+    <arg name="y"             value="4.0"/>
+  </include>
+
+  <!-- Spawn Robot 3 -->
+  <include file="$(find bigbot_base)/launch/base_jackal.launch">
+    <arg name="ns"            value="$(arg ns5)"/>
+    <arg name="config"        default="$(arg config)" />
+    <arg name="x"             value="3.0"/>
+    <arg name="y"             value="-4.0"/>
+  </include>
+
   <include file="$(find rotors_gazebo)/launch/mav.launch">
 
   </include>
