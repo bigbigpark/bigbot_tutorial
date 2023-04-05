@@ -24,15 +24,15 @@
   <include file="$(find bigbot_base)/launch/base_jackal.launch">
     <arg name="ns"            value="$(arg ns1)"/>
     <arg name="config"        value="$(arg config)"/>
-    <arg name="x"             value="0.2"/>
-    <arg name="y"             value="-1.2"/>
+    <arg name="x"             value="0.5"/>
+    <arg name="y"             value="-1.5"/>
   </include>
 
   <!-- Spawn Robot 2 -->
   <include file="$(find bigbot_base)/launch/base_jackal.launch">
     <arg name="ns"            value="$(arg ns2)"/>
     <arg name="config"        default="$(arg config)" />
-    <arg name="x"             value="1.4"/>
+    <arg name="x"             value="2"/>
     <arg name="y"             value="0"/>
   </include>
 
@@ -41,7 +41,7 @@
     <arg name="ns"            value="$(arg ns3)"/>
     <arg name="config"        default="$(arg config)" />
     <arg name="x"             value="-1.0"/>
-    <arg name="y"             value="2.2"/>
+    <arg name="y"             value="3.0"/>
   </include>
 
   <!-- Spawn Robot 4 -->
@@ -49,15 +49,15 @@
     <arg name="ns"            value="$(arg ns4)"/>
     <arg name="config"        default="$(arg config)" />
     <arg name="x"             value="-1.0"/>
-    <arg name="y"             value="-2.2"/>
+    <arg name="y"             value="-3.0"/>
   </include>
   
   <!-- Spawn Robot 5 -->
   <include file="$(find bigbot_base)/launch/base_jackal.launch">
     <arg name="ns"            value="$(arg ns5)"/>
     <arg name="config"        default="$(arg config)" />
-    <arg name="x"             value="0.2"/>
-    <arg name="y"             value="1.2"/>
+    <arg name="x"             value="0.5"/>
+    <arg name="y"             value="1.5"/>
   </include>
 
   <!-- View in RVIZ. -->
