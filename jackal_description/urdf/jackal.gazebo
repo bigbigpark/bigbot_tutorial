@@ -47,7 +47,7 @@
       <frameName>world</frameName>
       <bodyName>base_link</bodyName>
       <topicName>odom_ground_truth</topicName>
-      <gaussianNoise>0.2</gaussianNoise>
+      <gaussianNoise>0.1</gaussianNoise>
       <updateRate>100</updateRate>
     </plugin>
   </gazebo>

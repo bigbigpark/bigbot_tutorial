@@ -291,9 +291,9 @@
   </joint>
 
   <!-- Intel RealSense -->
-  <xacro:include filename="$(find realsense2_description)/urdf/_d435.urdf.xacro" />
+  <!-- <xacro:include filename="$(find realsense2_description)/urdf/_d435.urdf.xacro" />
   <xacro:sensor_d435 name="camera" topics_ns="$(arg namespace)/camera" parent="velodyne_mount" publish_pointcloud="true">
     <origin xyz="0 0 0.3" rpy="0 0 0" />
-  </xacro:sensor_d435>  
+  </xacro:sensor_d435>   -->
   
 </robot>
