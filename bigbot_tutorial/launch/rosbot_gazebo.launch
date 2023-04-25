@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+
+<launch>
+  <arg name="gui"       default="true"/>
+  <arg name="rviz"      default="false"/>
+  <arg name="config"    default="base" />
+  <arg name="test"      default="test1" />
+  <arg name="ns1"       default="rbt1"/>
+  <arg name="ns2"       default="rbt2"/>
+  <arg name="ns3"       default="rbt3"/>
+  <arg name="ns4"       default="rbt4"/>
+  <arg name="ns5"       default="rbt5"/>
+  <arg name="world_file" value="$(find bigbot_tutorial)/worlds/formation.world"/>
+
+  <!-- Start Gazebo. -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="use_sim_time" value="false"/>
+    <arg name="debug" value="false"/>
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="world_name" value="$(arg world_file)"/>
+  </include>
+
+  <!-- Spawn Robot 1 -->
+  <group ns="$(arg ns1)">
+    <param name="tf_prefix" value="$(arg ns1)" />
+    <include file="$(find bigbot_tutorial)/launch/one_robot.launch" >
+      <arg name="init_pose" value="-x 0.0 -y 4.0 -z 0" />
+      <arg name="robot_name"  value="$(arg ns1)" />
+    </include>
+  </group>
+
+  <!-- Spawn Robot 2 -->
+  <group ns="$(arg ns2)">
+    <param name="tf_prefix" value="$(arg ns2)" />
+    <include file="$(find bigbot_tutorial)/launch/one_robot.launch" >
+      <arg name="init_pose" value="-x 0.0 -y -2.0 -z 0" />
+      <arg name="robot_name"  value="$(arg ns2)" />
+    </include>
+  </group>
+
+  <!-- Spawn Robot 3 -->
+  <group ns="$(arg ns3)">
+    <param name="tf_prefix" value="$(arg ns3)" />
+    <include file="$(find bigbot_tutorial)/launch/one_robot.launch" >
+      <arg name="init_pose" value="-x 0.0 -y 0.0 -z 0" />
+      <arg name="robot_name"  value="$(arg ns3)" />
+    </include>
+  </group>
+
+  <!-- Spawn Robot 4 -->
+  <group ns="$(arg ns4)">
+    <param name="tf_prefix" value="$(arg ns4)" />
+    <include file="$(find bigbot_tutorial)/launch/one_robot.launch" >
+      <arg name="init_pose" value="-x 0.0 -y -4.0 -z 0" />
+      <arg name="robot_name"  value="$(arg ns4)" />
+    </include>
+  </group>
+
+  <!-- Spawn Robot 5 -->
+  <group ns="$(arg ns5)">
+    <param name="tf_prefix" value="$(arg ns5)" />
+    <include file="$(find bigbot_tutorial)/launch/one_robot.launch" >
+      <arg name="init_pose" value="-x 0.0 -y 2.0 -z 0" />
+      <arg name="robot_name"  value="$(arg ns5)" />
+    </include>
+  </group>
+
+  <!-- View in RVIZ. -->
+  <group if="$(arg rviz)">
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find bigbot_base)/rviz/APF.rviz" >
+    </node>
+  </group>
+
+</launch>

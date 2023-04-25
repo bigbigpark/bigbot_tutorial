@@ -8,7 +8,7 @@
     </plugin>
   </gazebo>
 
-  <gazebo>
+  <!-- <gazebo>
     <plugin name="imu_controller" filename="libhector_gazebo_ros_imu.so">
       <robotNamespace>/$(arg namespace)</robotNamespace>
       <updateRate>100.0</updateRate>
@@ -37,7 +37,7 @@
       <referenceAltitude>0</referenceAltitude>
       <drift>0.0001 0.0001 0.0001</drift>
     </plugin>
-  </gazebo>
+  </gazebo> -->
 
   <!-- publish actual jackal position -->
   <gazebo>
@@ -47,8 +47,8 @@
       <frameName>world</frameName>
       <bodyName>base_link</bodyName>
       <topicName>odom_ground_truth</topicName>
-      <gaussianNoise>0.1</gaussianNoise>
-      <updateRate>100</updateRate>
+      <!-- <gaussianNoise>0.1</gaussianNoise> -->
+      <updateRate>10</updateRate>
     </plugin>
   </gazebo>
 
