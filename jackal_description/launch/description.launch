@@ -11,7 +11,7 @@
   <param name="/$(arg ns)/robot_description"
          command="$(find jackal_description)/scripts/$(arg env_runner)
                     $(find jackal_description)/urdf/configs/$(arg config)
-                    $(find xacro)/xacro $(find jackal_description)/urdf/jackal_camera.urdf.xacro
+                    $(find xacro)/xacro $(find jackal_description)/urdf/jackal_ouster.urdf.xacro
                     'namespace:=$(arg ns)' 'config_id:=$(arg config_id)'" />
 
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" ns="$(arg ns)">
