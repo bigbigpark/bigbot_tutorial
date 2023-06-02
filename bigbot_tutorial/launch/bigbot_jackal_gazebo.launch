@@ -10,6 +10,12 @@
   <arg name="ns3"       default="rbt3"/>
   <arg name="ns4"       default="rbt4"/>
   <arg name="ns5"       default="rbt5"/>
+  <arg name="ns6"       default="rbt6"/>
+  <arg name="ns7"       default="rbt7"/>
+  <arg name="ns8"       default="rbt8"/>
+  <arg name="ns9"       default="rbt9"/>
+  <arg name="ns10"      default="rbt10"/>
+  <arg name="ns11"      default="rbt11"/>
   <arg name="world_file" value="$(find bigbot_tutorial)/worlds/formation.world"/>
 
   <!-- Start Gazebo. -->
@@ -26,6 +32,80 @@
     <arg name="config"        value="$(arg config)"/>
     <arg name="x"             value="0.0"/>
     <arg name="y"             value="0.0"/>
+  </include>
+
+  <!-- Spawn Robot 2 -->
+  <include file="$(find bigbot_base)/launch/base_jackal.launch">
+    <arg name="ns"            value="$(arg ns2)"/>
+    <arg name="config"        value="$(arg config)"/>
+    <arg name="x"             value="0.0"/>
+    <arg name="y"             value="1.0"/>
+  </include>
+
+  <!-- Spawn Robot 3 -->
+  <include file="$(find bigbot_base)/launch/base_jackal.launch">
+    <arg name="ns"            value="$(arg ns3)"/>
+    <arg name="config"        value="$(arg config)"/>
+    <arg name="x"             value="0.0"/>
+    <arg name="y"             value="2.0"/>
+  </include>
+
+  <!-- Spawn Robot 4 -->
+  <include file="$(find bigbot_base)/launch/base_jackal.launch">
+    <arg name="ns"            value="$(arg ns4)"/>
+    <arg name="config"        value="$(arg config)"/>
+    <arg name="x"             value="0.0"/>
+    <arg name="y"             value="3.0"/>
+  </include>
+
+  <!-- Spawn Robot 5 -->
+  <include file="$(find bigbot_base)/launch/base_jackal.launch">
+    <arg name="ns"            value="$(arg ns5)"/>
+    <arg name="config"        value="$(arg config)"/>
+    <arg name="x"             value="0.0"/>
+    <arg name="y"             value="4.0"/>
+  </include>
+
+  <include file="$(find bigbot_base)/launch/base_jackal.launch">
+    <arg name="ns"            value="$(arg ns6)"/>
+    <arg name="config"        value="$(arg config)"/>
+    <arg name="x"             value="0.0"/>
+    <arg name="y"             value="5.0"/>
+  </include>
+
+  <include file="$(find bigbot_base)/launch/base_jackal.launch">
+    <arg name="ns"            value="$(arg ns7)"/>
+    <arg name="config"        value="$(arg config)"/>
+    <arg name="x"             value="0.0"/>
+    <arg name="y"             value="6.0"/>
+  </include>
+
+  <include file="$(find bigbot_base)/launch/base_jackal.launch">
+    <arg name="ns"            value="$(arg ns8)"/>
+    <arg name="config"        value="$(arg config)"/>
+    <arg name="x"             value="0.0"/>
+    <arg name="y"             value="7.0"/>
+  </include>
+
+  <include file="$(find bigbot_base)/launch/base_jackal.launch">
+    <arg name="ns"            value="$(arg ns9)"/>
+    <arg name="config"        value="$(arg config)"/>
+    <arg name="x"             value="0.0"/>
+    <arg name="y"             value="8.0"/>
+  </include>
+
+  <include file="$(find bigbot_base)/launch/base_jackal.launch">
+    <arg name="ns"            value="$(arg ns10)"/>
+    <arg name="config"        value="$(arg config)"/>
+    <arg name="x"             value="0.0"/>
+    <arg name="y"             value="9.0"/>
+  </include>
+
+  <include file="$(find bigbot_base)/launch/base_jackal.launch">
+    <arg name="ns"            value="$(arg ns11)"/>
+    <arg name="config"        value="$(arg config)"/>
+    <arg name="x"             value="0.0"/>
+    <arg name="y"             value="10.0"/>
   </include>
 
   <!-- View in RVIZ. -->
